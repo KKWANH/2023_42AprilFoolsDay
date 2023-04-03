@@ -11,12 +11,15 @@ int main(int argc, char *argv[]) {
 
         if (c >= '2' && c <= '9') {
             sum += c - '0';
-        } else if (c == 'J' || c == 'Q' || c == 'K') {
+        } else if (c == 'T' || c == 'J' || c == 'D' || c == 'K') {
             sum += 10;
         } else if (c == 'A') {
             aces++;
             sum += 11;
-        }
+        } else {
+			printf("invalid input!");
+			exit(-1);
+		}
     }
 
     while (aces > 0 && sum > 21) {
